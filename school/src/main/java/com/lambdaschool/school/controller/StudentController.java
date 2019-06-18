@@ -1,5 +1,6 @@
 package com.lambdaschool.school.controller;
 
+import com.lambdaschool.school.model.ErrorDetail;
 import com.lambdaschool.school.model.Student;
 import com.lambdaschool.school.service.StudentService;
 import io.swagger.annotations.*;
@@ -38,7 +39,7 @@ public class StudentController
         return new ResponseEntity<>(myStudents, HttpStatus.OK);
     }
 
-    @ApiOperation(value = "Retrieves a student associated with the studentid", response = Student.class)
+    @ApiOperation(value = "Retrieves a student associated with the student ID", response = Student.class)
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Student Found", response = Student.class),
             @ApiResponse(code = 404, message = "Student Not Found", response = ErrorDetail.class)})
